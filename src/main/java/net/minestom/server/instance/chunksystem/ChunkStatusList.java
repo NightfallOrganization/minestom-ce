@@ -13,7 +13,7 @@ import org.jetbrains.annotations.UnknownNullability;
  * A {@link ChunkStatus} can be removed using {@link ChunkStatus#remove()}.
  * This is more or less a linked list of {@link ChunkStatus ChunkStatuses}
  */
-public interface ChunkStatusList extends Iterable<ChunkStatusList> {
+public interface ChunkStatusList extends Iterable<ChunkStatus> {
 
     /**
      * This will be called once the instance is being used. Will prohibit any further modification to every ChunkStatus in this list.
