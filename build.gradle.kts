@@ -116,7 +116,7 @@ tasks {
 
     nexusPublishing{
         useStaging.set(true)
-        this.packageGroup.set("dev.hollowcube")
+        this.packageGroup.set("eu.darkcube")
 
         transitionCheckOptions {
             maxRetries.set(360) // 1 hour
@@ -135,7 +135,7 @@ tasks {
     }
 
     publishing.publications.create<MavenPublication>("maven") {
-        groupId = "dev.hollowcube"
+        groupId = "eu.darkcube"
         artifactId = if (channel == "snapshot") "minestom-ce-snapshots" else "minestom-ce"
         version = project.version.toString()
 
@@ -144,12 +144,12 @@ tasks {
         pom {
             name.set(this@create.artifactId)
             description.set(shortDescription)
-            url.set("https://github.com/hollow-cube/minestom-ce")
+            url.set("https://github.com/NightfallOrganization/minestom-ce")
 
             licenses {
                 license {
                     name.set("Apache 2.0")
-                    url.set("https://github.com/hollow-cube/minestom-ce/blob/main/LICENSE")
+                    url.set("https://github.com/NightfallOrganization/minestom-ce/blob/main/LICENSE")
                 }
             }
 
@@ -162,23 +162,22 @@ tasks {
                     name.set("Matt Worzala")
                     email.set("matt@hollowcube.dev")
                 }
-            }
-
-            issueManagement {
-                system.set("GitHub")
-                url.set("https://github.com/hollow-cube/minestom-ce/issues")
+                developer {
+                    id.set("DasBabyPixel")
+                    email.set("dasbabypixel@gmail.com")
+                }
             }
 
             scm {
-                connection.set("scm:git:git://github.com/hollow-cube/minestom-ce.git")
-                developerConnection.set("scm:git:git@github.com:hollow-cube/minestom-ce.git")
-                url.set("https://github.com/hollow-cube/minestom-ce")
+                connection.set("scm:git:git://github.com/NightfallOrganization/minestom-ce.git")
+                developerConnection.set("scm:git:git@github.com:NightfallOrganization/minestom-ce.git")
+                url.set("https://github.com/NightfallOrganization/minestom-ce")
                 tag.set("HEAD")
             }
 
             ciManagement {
                 system.set("Github Actions")
-                url.set("https://github.com/hollow-cube/minestom-ce/actions")
+                url.set("https://github.com/NightfallOrganization/minestom-ce/actions")
             }
         }
     }
