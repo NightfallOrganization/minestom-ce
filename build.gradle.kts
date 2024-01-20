@@ -115,7 +115,7 @@ tasks {
     }
 
     nexusPublishing{
-        useStaging.set(true)
+        useStaging.set(false)
         this.packageGroup.set("eu.darkcube")
 
         transitionCheckOptions {
@@ -124,8 +124,8 @@ tasks {
         }
 
         repositories.sonatype {
-            nexusUrl.set(uri("https://s01.oss.sonatype.org/service/local/"))
-            snapshotRepositoryUrl.set(uri("https://s01.oss.sonatype.org/content/repositories/snapshots/"))
+            nexusUrl.set(uri("https://nexus.darkcube.eu/repository/dasbabypixel/"))
+            snapshotRepositoryUrl.set(uri("https://nexus.darkcube.eu/repository/dasbabypixel/"))
 
             if (System.getenv("SONATYPE_USERNAME") != null) {
                 username.set(System.getenv("SONATYPE_USERNAME"))
