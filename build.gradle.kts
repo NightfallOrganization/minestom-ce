@@ -185,7 +185,8 @@ tasks {
     signing {
         isRequired = System.getenv("CI") != null
 
-        val privateKey = System.getenv("GPG_PRIVATE_KEY").replace(" ", "\n ")
+        val privateKey = System.getenv("GPG_PRIVATE_KEY")
+//                .replace(" ", "\n ")
         val keyPassphrase = System.getenv()["GPG_PASSPHRASE"]
 
         println(privateKey)
