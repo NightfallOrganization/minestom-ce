@@ -1,3 +1,4 @@
+import net.kyori.blossom.task.SourceReplacementTask
 import java.time.Duration
 
 plugins {
@@ -54,6 +55,10 @@ allprojects {
 
     tasks.withType<JavaCompile> {
         options.encoding = "UTF-8"
+    }
+
+    tasks.withType<SourceReplacementTask> {
+        notCompatibleWithConfigurationCache("Blossom")
     }
 }
 
